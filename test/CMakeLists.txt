@@ -38,7 +38,8 @@ add_executable(tests ${test_sources})
 target_include_directories(tests PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-    target_include_directories(tests PRIVATE /opt/homebrew/include)
+    target_include_directories(tests PRIVATE /usr/local/include)
+    target_link_libraries(tests /usr/local/lib/libnng.a)
 endif()
 
-target_link_libraries(tests nngpp Catch2::Catch2)
+target_link_libraries(tests Catch2::Catch2)

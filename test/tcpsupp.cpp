@@ -87,7 +87,7 @@ TEST_CASE("Supplemental TCP", "[tcpapi]") {
 		REQUIRE(sa2.s_in.sa_port == sa.s_in.sa_port);
 	}
 	
-	INFO("Peer name matches")
+	INFO("Peer name matches");
 	{
 		nng_sockaddr sa2;
 		REQUIRE_NOTHROW(sa2 = c1.get_addr( to_name(nng::option::remote_address) ));

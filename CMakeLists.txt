@@ -1,27 +1,30 @@
-cmake_minimum_required (VERSION 3.1)
+cmake_minimum_required(VERSION 3.5)  # 更新版本以避免弃用警告
 project(nngpp CXX)
 
 include(GNUInstallDirs)
 
-option(NNGPP_BUILD_DEMOS "build nngpp demos" on)
-option(NNGPP_BUILD_TESTS "build nngpp tests" on)
+option(NNGPP_BUILD_DEMOS "build nngpp demos" ON)
+option(NNGPP_BUILD_TESTS "build nngpp tests" ON)
 
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(nng)
+find_package(nng REQUIRED)
 
-file(GLOB_RECURSE includes include/*.h)
+# 查找所有的源文件
+file(GLOB_RECURSE NNGPP_SOURCES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 
-add_library(nngpp INTERFACE)
+# 添加静态库目标
+add_library(nngpp STATIC ${NNGPP_SOURCES})
 target_include_directories(nngpp INTERFACE $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-target_link_libraries(nngpp INTERFACE nng::nng)
+target_link_libraries(nngpp PRIVATE ${CMAKE_SOURCE_DIR}/lib/libnng.a)
 
 if (NNGPP_BUILD_DEMOS)
     add_subdirectory(demo)
 endif()
 
 if (NNGPP_BUILD_TESTS)
-    option(NNGPP_BUILD_TLS_TEST "build nngpp tls tests (requires mbedtls)" on)
+    option(NNGPP_BUILD_TLS_TEST "build nngpp tls tests (requires mbedtls)" ON)
     add_subdirectory(test)
 endif()
 
