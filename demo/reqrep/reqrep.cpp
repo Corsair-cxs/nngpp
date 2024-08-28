@@ -9,6 +9,7 @@
 #include <nngpp/nngpp.h>
 #include <nngpp/protocol/req0.h>
 #include <nngpp/protocol/rep0.h>
+#include <utility>
 
 #define CLIENT "client"
 #define SERVER "server"
