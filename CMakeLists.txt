@@ -3,8 +3,8 @@ project(nngpp CXX)
 
 include(GNUInstallDirs)
 
-option(NNGPP_BUILD_DEMOS "build nngpp demos" off)
-option(NNGPP_BUILD_TESTS "build nngpp tests" off)
+option(NNGPP_BUILD_DEMOS "build nngpp demos" on)
+option(NNGPP_BUILD_TESTS "build nngpp tests" on)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -21,7 +21,7 @@ if (NNGPP_BUILD_DEMOS)
 endif()
 
 if (NNGPP_BUILD_TESTS)
-    option(NNGPP_BUILD_TLS_TEST "build nngpp tls tests (requires mbedtls)" off)
+    option(NNGPP_BUILD_TLS_TEST "build nngpp tls tests (requires mbedtls)" on)
     add_subdirectory(test)
 endif()
 
