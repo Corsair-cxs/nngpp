@@ -1,4 +1,4 @@
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <nngpp/nngpp.h>
 #include <nngpp/protocol/push0.h>
 #include <nngpp/protocol/pull0.h>

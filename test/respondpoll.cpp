@@ -1,4 +1,4 @@
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <nngpp/nngpp.h>
 #include <nngpp/protocol/survey0.h>
 #include <nngpp/protocol/respond0.h>

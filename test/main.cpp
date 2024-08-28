@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_RUNNER
 #define CATCH_CONFIG_COLOUR_NONE
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <nngpp/nngpp.h>
 
 int main( int argc, char* argv[] ) {
