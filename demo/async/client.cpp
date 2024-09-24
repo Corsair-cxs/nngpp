@@ -6,6 +6,7 @@
 #include <nngpp/nngpp.h>
 #include <nngpp/protocol/req0.h>
 #include <nngpp/platform/platform.h>
+#include <utility>
 
 //  The client runs just once, and then returns.
 void client(const char* url, const char* msecstr) {

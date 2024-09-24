@@ -1,4 +1,4 @@
-#include <catch2/catch.hpp>
+#include <catch2/catch_all.hpp>
 #include <nngpp/nngpp.h>
 #include <nngpp/protocol/pair1.h>
 #include <nngpp/platform/platform.h>
