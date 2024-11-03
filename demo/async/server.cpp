@@ -3,6 +3,7 @@
 
 #include <cstdio>
 #include <memory>
+#include <cstdlib> 
 #include <nngpp/nngpp.h>
 #include <nngpp/protocol/rep0.h>
 #include <nngpp/platform/platform.h>
