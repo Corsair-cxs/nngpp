@@ -2,15 +2,6 @@ cmake_minimum_required(VERSION 3.5)  # 更新版本以避免弃用警告
 project(nngpp CXX)
 
 include(GNUInstallDirs)
-include(FetchContent)
-
-FetchContent_Declare(
-  Catch2
-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG v3.0.1  # 替换为你需要的版本
-)
-
-FetchContent_MakeAvailable(Catch2)
 
 option(NNGPP_BUILD_DEMOS "build nngpp demos" ON)
 option(NNGPP_BUILD_TESTS "build nngpp tests" ON)

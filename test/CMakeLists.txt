@@ -40,8 +40,6 @@ target_include_directories(tests PUBLIC ${CMAKE_SOURCE_DIR}/include)
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
     target_include_directories(tests PRIVATE /usr/local/include)
     target_link_libraries(tests /usr/local/lib/libnng.a)
-elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-    target_link_libraries(tests  ${CMAKE_SOURCE_DIR}/lib/libnng.a)
 endif()
 
 target_link_libraries(tests Catch2::Catch2)
